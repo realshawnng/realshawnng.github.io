@@ -4,17 +4,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | Wu&#39;s Blog</title>
+  <title>类成员的访问控制 | Wu&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wu's Blog">
-<meta property="og:url" content="http://wuxiaolinux.github.io/archives/index.html">
+  <meta name="description" content="访问级别修饰符决定了其他类是否可以使用一个字段或调用一个方法，在2个地方添加访问级别修饰符：
+
+在顶层，也就是对类的访问控制，修饰符可以是public或者默认不写（包层级）
+
+在成员层，对字段、方法的访问控制，可以是public、protected、private、默认不写（同包可见）
+
+
+一、控制类的访问1. public这个类对任何其他类都是可见的，大家都可以使用。在一个源文件中，只能有一个p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="类成员的访问控制">
+<meta property="og:url" content="http://wuxiaolinux.github.io/2015/11/06/Controlling-Access-to-Members-of-a-Class/index.html">
 <meta property="og:site_name" content="Wu's Blog">
-<meta property="og:description">
+<meta property="og:description" content="访问级别修饰符决定了其他类是否可以使用一个字段或调用一个方法，在2个地方添加访问级别修饰符：
+
+在顶层，也就是对类的访问控制，修饰符可以是public或者默认不写（包层级）
+
+在成员层，对字段、方法的访问控制，可以是public、protected、private、默认不写（同包可见）
+
+
+一、控制类的访问1. public这个类对任何其他类都是可见的，大家都可以使用。在一个源文件中，只能有一个p">
+<meta property="og:updated_time" content="2015-11-06T06:27:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wu's Blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="类成员的访问控制">
+<meta name="twitter:description" content="访问级别修饰符决定了其他类是否可以使用一个字段或调用一个方法，在2个地方添加访问级别修饰符：
+
+在顶层，也就是对类的访问控制，修饰符可以是public或者默认不写（包层级）
+
+在成员层，对字段、方法的访问控制，可以是public、protected、private、默认不写（同包可见）
+
+
+一、控制类的访问1. public这个类对任何其他类都是可见的，大家都可以使用。在一个源文件中，只能有一个p">
   
     <link rel="alternative" href="/atom.xml" title="Wu&#39;s Blog" type="application/atom+xml">
   
@@ -70,77 +92,125 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/11/06/Controlling-Access-to-Members-of-a-Class/" class="archive-article-date">
-  <time datetime="2015-11-05T16:00:00.000Z" itemprop="datePublished">11月 6</time>
+      <section id="main"><article id="post-Controlling-Access-to-Members-of-a-Class" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/06/Controlling-Access-to-Members-of-a-Class/" class="article-date">
+  <time datetime="2015-11-05T16:00:00.000Z" itemprop="datePublished">2015/11/06</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/11/06/Controlling-Access-to-Members-of-a-Class/">类成员的访问控制</a>
+    <h1 class="article-title" itemprop="name">
+      类成员的访问控制
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/11/05/Generating-SSH-keys/" class="archive-article-date">
-  <time datetime="2015-11-05T14:03:25.000Z" itemprop="datePublished">11月 5</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/11/05/Generating-SSH-keys/">生成 SSH keys</a>
-    </h1>
-  
+        <p>访问级别修饰符决定了其他类是否可以使用一个字段或调用一个方法，在2个地方添加访问级别修饰符：</p>
+<ol>
+<li><p>在顶层，也就是对类的访问控制，修饰符可以是public或者默认不写（包层级）</p>
+</li>
+<li><p>在成员层，对字段、方法的访问控制，可以是public、protected、private、默认不写（同包可见）</p>
+</li>
+</ol>
+<h3 id="一、控制类的访问">一、控制类的访问</h3><h4 id="1-_public">1. public</h4><p>这个类对任何其他类都是可见的，大家都可以使用。在一个源文件中，只能有一个public类，且源文件名（不包括扩展名）必和public类一致，否则编译错误。</p>
+<h4 id="2-_不写修饰符">2. 不写修饰符</h4><p>不写修饰符就是采用默认控制权限，该类只对同一个包的其他类可见，在家族同辈之间共享。</p>
+<h3 id="二、控制成员的访问">二、控制成员的访问</h3><h4 id="1-_public-1">1. public</h4><p>与类相同。</p>
+<h4 id="2-_不写修饰符-1">2. 不写修饰符</h4><p>与类相同。</p>
+<h4 id="3-_protected">3. protected</h4><p>受保护的成员，同一个包可见，子类可见。（这种说法其实不清晰）</p>
+<h4 id="4-_private">4. private</h4><p>只能在该类中访问，是私有财产。</p>
+<p>用表格来描述成员访问修饰符：</p>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>类本身</th>
+<th>同一个包</th>
+<th>子类</th>
+<th style="text-align:right">公开</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td style="text-align:right">Yes</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>默认</td>
+<td>Yes</td>
+<td>Yes</td>
+<td></td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>private</td>
+<td>Yes</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="访问级别的作用">访问级别的作用</h2><p>两方面的作用：</p>
+<ol>
+<li><p>别人写的类，我可以使用哪些成员</p>
+</li>
+<li><p>我写的类，别人可以使用哪些成员</p>
+</li>
+</ol>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/11/05/covariant-return-type/" class="archive-article-date">
-  <time datetime="2015-11-05T13:11:55.000Z" itemprop="datePublished">11月 5</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/11/05/covariant-return-type/">Java 协变返回类型</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://wuxiaolinux.github.io/2015/11/06/Controlling-Access-to-Members-of-a-Class/" data-id="cign92k9v0000vy70zshwkdm8" class="article-share-link" data-share="baidu">分享到</a>
+      
 
-    </header>
+      
+        <a href="http://wuxiaolinux.github.io/2015/11/06/Controlling-Access-to-Members-of-a-Class/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/11/05/Generating-SSH-keys/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">生成 SSH keys</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2015/11/06/Controlling-Access-to-Members-of-a-Class/" data-title="类成员的访问控制" data-url="http://wuxiaolinux.github.io/2015/11/06/Controlling-Access-to-Members-of-a-Class/"></div>
+  </section>
 </section>
       
       <aside id="sidebar">

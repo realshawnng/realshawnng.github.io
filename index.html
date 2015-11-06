@@ -72,6 +72,111 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-Controlling-Access-to-Members-of-a-Class" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/06/Controlling-Access-to-Members-of-a-Class/" class="article-date">
+  <time datetime="2015-11-05T16:00:00.000Z" itemprop="datePublished">2015/11/06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/06/Controlling-Access-to-Members-of-a-Class/">类成员的访问控制</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>访问级别修饰符决定了其他类是否可以使用一个字段或调用一个方法，在2个地方添加访问级别修饰符：</p>
+<ol>
+<li><p>在顶层，也就是对类的访问控制，修饰符可以是public或者默认不写（包层级）</p>
+</li>
+<li><p>在成员层，对字段、方法的访问控制，可以是public、protected、private、默认不写（同包可见）</p>
+</li>
+</ol>
+<h3 id="一、控制类的访问">一、控制类的访问</h3><h4 id="1-_public">1. public</h4><p>这个类对任何其他类都是可见的，大家都可以使用。在一个源文件中，只能有一个public类，且源文件名（不包括扩展名）必和public类一致，否则编译错误。</p>
+<h4 id="2-_不写修饰符">2. 不写修饰符</h4><p>不写修饰符就是采用默认控制权限，该类只对同一个包的其他类可见，在家族同辈之间共享。</p>
+<h3 id="二、控制成员的访问">二、控制成员的访问</h3><h4 id="1-_public-1">1. public</h4><p>与类相同。</p>
+<h4 id="2-_不写修饰符-1">2. 不写修饰符</h4><p>与类相同。</p>
+<h4 id="3-_protected">3. protected</h4><p>受保护的成员，同一个包可见，子类可见。（这种说法其实不清晰）</p>
+<h4 id="4-_private">4. private</h4><p>只能在该类中访问，是私有财产。</p>
+<p>用表格来描述成员访问修饰符：</p>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>类本身</th>
+<th>同一个包</th>
+<th>子类</th>
+<th style="text-align:right">公开</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td style="text-align:right">Yes</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>默认</td>
+<td>Yes</td>
+<td>Yes</td>
+<td></td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>private</td>
+<td>Yes</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="访问级别的作用">访问级别的作用</h2><p>两方面的作用：</p>
+<ol>
+<li><p>别人写的类，我可以使用哪些成员</p>
+</li>
+<li><p>我写的类，别人可以使用哪些成员</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://wuxiaolinux.github.io/2015/11/06/Controlling-Access-to-Members-of-a-Class/" data-id="cign92k9v0000vy70zshwkdm8" class="article-share-link" data-share="baidu">分享到</a>
+      
+
+      
+        <a href="http://wuxiaolinux.github.io/2015/11/06/Controlling-Access-to-Members-of-a-Class/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Generating-SSH-keys" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/11/05/Generating-SSH-keys/" class="article-date">
@@ -100,7 +205,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://wuxiaolinux.github.io/2015/11/05/Generating-SSH-keys/" data-id="cign67yqx0000tb70otkng6zu" class="article-share-link" data-share="baidu">分享到</a>
+        <a data-url="http://wuxiaolinux.github.io/2015/11/05/Generating-SSH-keys/" data-id="cign92kb6000fvy70eatg904q" class="article-share-link" data-share="baidu">分享到</a>
       
 
       
@@ -149,7 +254,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://wuxiaolinux.github.io/2015/11/05/covariant-return-type/" data-id="cign67ys2000etb704jq5x7ot" class="article-share-link" data-share="baidu">分享到</a>
+        <a data-url="http://wuxiaolinux.github.io/2015/11/05/covariant-return-type/" data-id="cign92kb3000cvy708hnf7145" class="article-share-link" data-share="baidu">分享到</a>
       
 
       
@@ -166,55 +271,10 @@
 
 
   
-    <article id="post-steve-jobs-oop" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/05/steve-jobs-oop/" class="article-date">
-  <time datetime="2015-11-04T16:00:00.000Z" itemprop="datePublished">2015/11/05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/05/steve-jobs-oop/">乔布斯理解的OOP</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>下面的这段话摘自 1994 年 Rolling Stone 对乔布斯的采访，乔布斯解释了什么是面向对象编程。</p>
-        
-          <p class="article-more-link">
-            <a href="/2015/11/05/steve-jobs-oop/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://wuxiaolinux.github.io/2015/11/05/steve-jobs-oop/" data-id="cign67yrx0005tb70kn57r9w0" class="article-share-link" data-share="baidu">分享到</a>
-      
-
-      
-        <a href="http://wuxiaolinux.github.io/2015/11/05/steve-jobs-oop/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OO/">OO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OOP/">OOP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/乔布斯/">乔布斯</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </section>
       
@@ -226,7 +286,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OO/">OO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/">OOP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/乔布斯/">乔布斯</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OO/">OO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP/">OOP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/乔布斯/">乔布斯</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -235,7 +295,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/OO/" style="font-size: 10px;">OO</a> <a href="/tags/OOP/" style="font-size: 10px;">OOP</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/乔布斯/" style="font-size: 10px;">乔布斯</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+      <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/OO/" style="font-size: 10px;">OO</a> <a href="/tags/OOP/" style="font-size: 10px;">OOP</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/乔布斯/" style="font-size: 10px;">乔布斯</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
     </div>
   </div>
 
@@ -244,7 +304,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -254,6 +314,10 @@
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/11/06/Controlling-Access-to-Members-of-a-Class/">类成员的访问控制</a>
+          </li>
         
           <li>
             <a href="/2015/11/05/Generating-SSH-keys/">生成 SSH keys</a>
