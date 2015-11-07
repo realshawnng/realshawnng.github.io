@@ -4,17 +4,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/11 | CODING...</title>
+  <title>Java嵌套类 | CODING...</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="CODING...">
-<meta property="og:url" content="http://realshawnng.github.io/archives/2015/11/page/2/index.html">
+  <meta name="description" content="The Java programming language allows you to define a class within another class. Such a class is called a nested class.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java嵌套类">
+<meta property="og:url" content="http://realshawnng.github.io/2015/11/07/nested-class/index.html">
 <meta property="og:site_name" content="CODING...">
-<meta property="og:description">
+<meta property="og:description" content="The Java programming language allows you to define a class within another class. Such a class is called a nested class.">
+<meta property="og:updated_time" content="2015-11-07T14:27:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CODING...">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Java嵌套类">
+<meta name="twitter:description" content="The Java programming language allows you to define a class within another class. Such a class is called a nested class.">
   
     <link rel="alternative" href="/atom.xml" title="CODING..." type="application/atom+xml">
   
@@ -79,58 +80,85 @@ var _hmt = _hmt || [];
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/11/05/covariant-return-type/" class="archive-article-date">
-  <time datetime="2015-11-05T13:11:55.000Z" itemprop="datePublished">11月 5</time>
+      <section id="main"><article id="post-nested-class" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/07/nested-class/" class="article-date">
+  <time datetime="2015-11-07T12:38:00.000Z" itemprop="datePublished">2015/11/07</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/11/05/covariant-return-type/">Java 协变返回类型</a>
+    <h1 class="article-title" itemprop="name">
+      Java嵌套类
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/11/05/steve-jobs-oop/" class="archive-article-date">
-  <time datetime="2015-11-04T16:00:00.000Z" itemprop="datePublished">11月 5</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/11/05/steve-jobs-oop/">乔布斯理解的OOP</a>
-    </h1>
-  
+        <p>The Java programming language allows you to define a class within another class. Such a class is called a nested class.</p>
+<a id="more"></a>
+<p>Like this: </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">NestedClass</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="分类">分类</h2><p>嵌套类被分为两类：</p>
+<ol>
+<li>static(called <em>static nested classes</em>)</li>
+<li>non-static(called <em>inner classes</em>)</li>
+</ol>
+<p>Like this: </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticNestedClass</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">InnerClass</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="为什么使用嵌套类？">为什么使用嵌套类？</h2><p>» 提高效率。如果一个类只对某个类有用，把这个类作为内部类，是符合逻辑的，且 makes their package more streamlined.</p>
+<p>» 增强封装性。将A类作为B类的内部类，A类可直接访问B类的private字段，并且A类对外不可见。</p>
+<p>» 增加代码的可读性和可维护性。代码就近原则，类更靠近使用它的地方。</p>
+<h2 id="Static_Nested_Classes">Static Nested Classes</h2><p>与类方法一样，静态嵌套类不能直接使用实例变量和实例方法，而是通过对象引用使用它们。</p>
+<blockquote>
+<p>静态嵌套类与外部类（也包括所有其他类）的实例成员交互，就像其他所有普通类与这些实例成员交互一样，可以把静态嵌套类看做普通类。事实上，静态嵌套类行为上与普通类一样，为了封装便利，才将它作为嵌套类。</p>
+</blockquote>
+<p>如何使用静态嵌套类？</p>
+<p>Like this: </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OuterClass.StaticNestedClass nestedObject = <span class="keyword">new</span> OuterClass.StaticNestedClass();</span><br></pre></td></tr></table></figure>
+<h1 id="未完待续…">未完待续…</h1>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://realshawnng.github.io/2015/11/07/nested-class/" data-id="cigp3iur1000cws705j0kptn4" class="article-share-link" data-share="baidu">分享到</a>
+      
 
-    </header>
+      
+        <a href="http://realshawnng.github.io/2015/11/07/nested-class/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/11/06/Controlling-Access-to-Members-of-a-Class/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">Java访问级别修饰符</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2015/11/07/nested-class/" data-title="Java嵌套类" data-url="http://realshawnng.github.io/2015/11/07/nested-class/"></div>
+  </section>
 </section>
       
       <aside id="sidebar">
